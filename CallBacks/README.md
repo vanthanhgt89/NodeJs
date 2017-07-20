@@ -2,6 +2,7 @@
 ### Callback function
 * Callback function tạm hiểu là một function A được truyền vào function B dưới dạng tham số của B
 * Lúc này B gọi đến A để thực hiện một chức năng nào đó mà A nắm giữ
+* Callback sử dụng trong trường hợp thục thi liên quan tới nhập xuất dữ liệu như dowload, đọc ghi file và giao tiếp cơ sở dữ liệu...
 ### Nguyên tắc khi thực hiện callback
 * Kiểm tra tham số Callback phải là function
 ```js
@@ -52,3 +53,59 @@ test(info.setName,info)
 console.log(info.name)// return Bui van thanh
 
   ```
+
+  * Expamle dowload
+  ```js
+  // Viec dowload co the keo dai thoi gian, chuong trinh khong de dung de dowload xong moi chay tiep
+let photo  = dowloadPhoto('https://abc.com')
+
+// Gan callback cho su kien dowload khi nao dowload xong chay ham callback
+dowloadPhoto('https://abc.com', handlePhoto)
+
+function handlePhoto(err,photo){
+  if(err) throw new Error ('Dowload error!')
+  else console.log('Dowload finished', photo);
+}
+  ```
+
+
+  ## Callback hell là gì
+  * Callback hell là tập hợp nhiều công việc theo thứ tự lần lượt
+  ```js
+  function doA(job, time, doneJob) {
+  setTimeout(() => {
+    return doneJob(false, 'A')
+  }, time)
+}
+
+function doB(job, time, doneJob) {
+  setTimeout(() => {
+    return doneJob(false, 'B')
+  }, time)
+}
+
+function doC(job, time, doneJob) {
+  setTimeout(() => {
+    return doneJob(false, 'C')
+  }, time)
+}
+
+
+function main() {
+  doA('A', 2000, (err, res) => {
+    console.log('done: ', res);
+    doB('B', 1000, (err, res) => {
+      console.log('done: ', res);
+      doC('C', 1000, (err, res) => {
+        console.log('done: ', res);
+      })
+    })
+  })
+}
+main()
+// ket qua
+// done:  A 
+// done:  B 
+// done:  C
+  ```
+  * Khắc phuc callback hell với số lượng lớn các công việc lồng nhau nên đặt tên mỗi hàm tác biệt khỏi callback chính
