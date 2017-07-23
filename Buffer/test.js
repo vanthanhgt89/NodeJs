@@ -28,7 +28,7 @@ function readDemo() {
   // data: [ 110, 111, 100, 101, 32, 106, 115, 32, 98, 117, 102, 102, 101, 114 ] }
  }
 
- bufToJson()
+//  bufToJson()
 
  function concatBuf(){
    let buf1 = new Buffer('Hoc node js ')
@@ -38,9 +38,9 @@ function readDemo() {
    console.log('Độ dài buf ghép nối: ' + buf3.toString());
  }
 
- concatBuf()
+//  concatBuf()
 
- function compareBuf(){
+  module.exports.compareBuf = () =>{
    let buf1 = new Buffer('node')
    let buf2 = new Buffer('techmaster')
    let result = buf1.compare(buf2)
@@ -64,4 +64,9 @@ function readDemo() {
    
  }
 
- compareBuf() //node đứng sau techmaster
+//  compareBuf() //node đứng sau techmaster]
+
+//  module.exports.compareBuf = compareBuf
+ module.exports.concatBuf = concatBuf
+ module.exports.readDemo = readDemo
+ 

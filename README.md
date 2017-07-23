@@ -51,3 +51,22 @@
 - repository - loại repository và url của package
 - main - điểm vào của package
 - keywords - các từ khóa
+## Module exports
+```js
+    function counter(a){
+        return a++
+    }
+
+    // cach 1
+    module.exports.counter = a => a++
+    
+    // canh 3
+    module.export.counter = counter
+
+    // cach 3
+    module.exports = {
+        counter = counter
+        <!-- ...... -->
+    }
+
+```

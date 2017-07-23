@@ -1,6 +1,6 @@
 let fs = require('fs')
 let path = require('path')
-let sourcePath = '/Users/vanthanh/Desktop/Js-example/Node js/'
+let sourcePath = 'c:/Users/vanthanh/Desktop/Js-example/Node js/'
 let resolve = path.resolve(sourcePath) // Tra ve duong dan tuyet doi cua thu muc
 // console.log(resolve);
 

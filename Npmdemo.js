@@ -16,3 +16,4 @@ if(fs.existsSync(myFile)){
 }else{
     console.log('File khong tai ' + myFile);
 }
+
