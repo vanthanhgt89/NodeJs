@@ -1,5 +1,5 @@
 {
-  "name": "express",
+  "name": "ex",
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parse": "^0.4.0",
+    "express": "^4.15.3",
+    "express-vue": "^3.15.1",
+    "multer": "^1.3.0",
+    "nodemon": "^1.11.0"
+  }
 }
