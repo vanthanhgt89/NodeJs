@@ -1,0 +1,1 @@
+Code không viết ngắn được nhiều lắm. Nhưng nhìn dễ hiểu hơn: đọc file xong then thì parse JSON xong then in ra console. Còn lại thì sẽ bắt lỗi ở cuối. Lỗi chi tiết bắt trước, lỗi chung chung để sau cùng. Cái hay là tất cả các tác vụ được thực hiện tuần tự nhưng không ngăn tiến trình xử lý event queue chạy (non-blocking).
